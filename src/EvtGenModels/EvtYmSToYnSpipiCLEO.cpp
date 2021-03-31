@@ -142,7 +142,7 @@ void EvtYmSToYnSpipiCLEO::decay( EvtParticle* p )
         // the direction opposite the Y(mS) in the X rest frame. If the pions are pi0s, then
         // choose the one where cos(theta) = [0:1].
 
-        EvtVector4R P_YmS_X = boostTo( p->getP4(), P_X );
+        EvtVector4R P_YmS_X = boostTo(p->getP4Restframe(), P_X);
         double costheta = -p4[0].dot( P_YmS_X ) /
                           ( p4[0].d3mag() * P_YmS_X.d3mag() );
         if ( EvtPDL::name( s1->getId() ) == "pi0" ) {
